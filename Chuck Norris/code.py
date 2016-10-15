@@ -1,6 +1,7 @@
 
 msg_str = input("Enter your msg: ")
 print (' '.join(format(ord(x), 'b') for x in msg_str))
+
 encoded_msg = []
 count = 0
 zero_flag = False
@@ -8,8 +9,10 @@ one_flag  = False
 
 for msg_byte in msg_str:
     msg_byte_bin =  bin(int.from_bytes(msg_byte.encode(), 'big'))
-    msg_byte_bin = msg_byte_bin[2:]
-
+    msg_byte_bin = msg_byte_bin[2:] # Get rid of '0b'
+	
+    # Ascii characters are 7bits, if the converted character is less then 7
+    # add a zero at the beginning
     if(len(msg_byte_bin)<7):
         msg_byte_bin = '0' + msg_byte_bin
     
