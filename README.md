@@ -1,0 +1,1 @@
+This repository contains the code from www.codingame.com challenges, a fun way to keep practicing programming.
